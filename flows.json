@@ -1,17 +1,196 @@
 [
     {
-        "id": "7fe3a8cb909c1ece",
+        "id": "cb823e5d9815611b",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "Flow 3",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "aab935bb36095328",
+        "id": "2a5a2c2054a76d61",
         "type": "inject",
-        "z": "7fe3a8cb909c1ece",
+        "z": "cb823e5d9815611b",
         "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ], 
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Texto de prueba para el grupo 9",
+        "payloadType": "str",
+        "x": 170,
+        "y": 60,
+        "wires": [
+            [
+                "1a26e0e0997a5ff9"
+            ]
+        ]
+    },
+    {
+        "id": "1a26e0e0997a5ff9",
+        "type": "ui_text",
+        "z": "cb823e5d9815611b",
+        "group": "0534ed5a9c04ee82",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Texto de prueba- label",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 560,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "e109ee821de7abf3",
+        "type": "ui_gauge",
+        "z": "cb823e5d9815611b",
+        "name": "",
+        "group": "0e219f4cfe94ca60",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 530,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "a966aa1dd7e5db6a",
+        "type": "ui_chart",
+        "z": "cb823e5d9815611b",
+        "name": "",
+        "group": "0e219f4cfe94ca60",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 530,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "af20cb6c5c77932f",
+        "type": "inject",
+        "z": "cb823e5d9815611b",
+        "name": "Topic1",
+        "props": [
+            {
+                "p": "topic",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 130,
+        "y": 180,
+        "wires": [
+            [
+                "e109ee821de7abf3",
+                "a966aa1dd7e5db6a"
+            ]
+        ]
+    },
+    {
+        "id": "af3ae03368dbc141",
+        "type": "inject",
+        "z": "cb823e5d9815611b",
+        "name": "Topic2",
+        "props": [
+            {
+                "p": "topic",
+                "v": "5",
+                "vt": "msg"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "5",
+        "payloadType": "num",
+        "x": 130,
+        "y": 260,
+        "wires": [
+            [
+                "e109ee821de7abf3",
+                "a966aa1dd7e5db6a"
+            ]
+        ]
+    },
+    {
+        "id": "55be12d48f5a33ac",
+        "type": "inject",
+        "z": "cb823e5d9815611b",
+        "name": "10",
         "props": [
             {
                 "p": "payload"
@@ -26,30 +205,46 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 140,
-        "y": 60,
+        "payload": "10",
+        "payloadType": "num",
+        "x": 130,
+        "y": 340,
         "wires": [
             [
-                "99e5f6b83b72f7d0"
+                "e109ee821de7abf3",
+                "a966aa1dd7e5db6a"
             ]
         ]
     },
     {
-        "id": "99e5f6b83b72f7d0",
-        "type": "debug",
-        "z": "7fe3a8cb909c1ece",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 410,
-        "y": 100,
-        "wires": []
+        "id": "0534ed5a9c04ee82",
+        "type": "ui_group",
+        "name": "Texto-Grupo 1",
+        "tab": "0762201e4ec177e5",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "0e219f4cfe94ca60",
+        "type": "ui_group",
+        "name": "Grafico- Grupo2",
+        "tab": "0762201e4ec177e5",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "0762201e4ec177e5",
+        "type": "ui_tab",
+        "name": "Flow 3 G9-tab",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
     }
 ]
